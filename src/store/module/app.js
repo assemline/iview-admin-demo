@@ -35,7 +35,7 @@ export default {
     hasReadErrorPage: false
   },
   getters: {
-    menuList: (state, getters, rootState) => getMenuByRouter(routers, rootState.user.access),
+    menuList: (state, getters, rootState) => getMenuByRouter(state.menuList, rootState.user.access),
     errorCount: state => state.errorList.length
   },
   mutations: {
@@ -85,6 +85,11 @@ export default {
     },
     setHasReadErrorLoggerStatus (state, status = true) {
       state.hasReadErrorPage = status
+    },
+    updateMenuList (state, routes) { // ①添 接受前台数组，刷新菜单
+      router.addRoutes(routes) // 动态添加路由
+      state.menuList = routes
+      console.log('①updateMenuList添menuList', this)
     }
   },
   actions: {

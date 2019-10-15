@@ -5,6 +5,8 @@ import store from '@/store'
 import iView from 'iview'
 import { setToken, getToken, canTurnTo, setTitle } from '@/libs/util'
 import config from '@/config'
+import { initRouter } from '@/libs/router-util'
+
 const { homeName } = config
 
 Vue.use(Router)
@@ -29,6 +31,7 @@ router.beforeEach((to, from, next) => {
     })
   } else if (!token && to.name === LOGIN_PAGE_NAME) {
     // 未登陆且要跳转的页面是登录页
+    initRouter()
     next() // 跳转
   } else if (token && to.name === LOGIN_PAGE_NAME) {
     // 已登录且要跳转的页面是登录页
