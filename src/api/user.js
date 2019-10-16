@@ -1,6 +1,4 @@
 import axios from '@/libs/api.request'
-import { Base64 } from '@/libs/base64'
-const Authorization = 'Basic ' + Base64.encode('app:app')
 
 export const login = ({ userName, password }) => {
   const data = {
@@ -8,12 +6,9 @@ export const login = ({ userName, password }) => {
     password
   }
   return axios.request({
-    url: '/platform/auth/oauth/token',
+    url: 'login',
     data,
-    method: 'post',
-    headers: {
-      'Authorization': Authorization
-    }
+    method: 'post'
   })
 }
 
