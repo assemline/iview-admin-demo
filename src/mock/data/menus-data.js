@@ -59,6 +59,26 @@ export const mockMenuData = [
     ]
   },
   {
+    'path': '/components',
+    'name': 'components',
+    'meta': {
+      'icon': 'logo-buffer',
+      'title': '组件'
+    },
+    'component': 'Main',
+    'children': [
+      {
+        'path': 'tree_select_page',
+        'name': 'tree_select_page',
+        'meta': {
+          'icon': 'md-arrow-dropdown-circle',
+          'title': '树状下拉选择器'
+        },
+        'component': 'components/tree-select/index'
+      }
+    ]
+  },
+  {
     'path': '/auth',
     'name': 'auth',
     'meta': {

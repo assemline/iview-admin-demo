@@ -46,10 +46,10 @@ module.exports = {
     inline: true,
     stats: { color: true },
     proxy: {
-      '/platform': {
-        target: 'http://localhost:12100/',
+      '/variableCategory': {
+        target: 'http://127.0.0.1:12188/',
         changeOrigin: true,
-        pathReWrite: { '^/platform': '/platform' }
+        pathReWrite: { '^/variableCategory': '/variableCategory' }
       }
     }
   }
